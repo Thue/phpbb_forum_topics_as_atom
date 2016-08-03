@@ -44,7 +44,6 @@ def get_soup(forumurl):
 
 def index(req):
    forumurl = "writeme" # replace with e.g. "https://forums.factorio.com/viewforum.php?f=3"
-   forumurl = "https://forums.factorio.com/viewforum.php?f=3"
    if forumurl == "writeme":
       req.status = mod_python.apache.HTTP_INTERNAL_SERVER_ERROR
       return "The admin for this script needs to manually set the 'forumurl' parameter in the source code"
