@@ -16,7 +16,7 @@ def get_forumtitle(soup):
    forumtitle = soup.find("title")
    match = re.match("^(.*) &bull; View forum - (.*)$", forumtitle.contents[0])
    if match:
-      forumtitle = match.group(1) + match.group(2)
+      forumtitle = match.group(1) + " - " + match.group(2)
    else:
       forumtitle = "(Forum title not found)"
    return forumtitle
