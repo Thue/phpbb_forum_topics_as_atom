@@ -70,8 +70,15 @@ def index(req):
       else:
          author = "(author not found)"
 
+      #phpBB generates a unique new session id (sid) for each forum
+      #download, and adds this to all urls. This will make feed
+      #readers interpret each link as unique each time it polls. So we
+      #need to remove the sid=...
+      url = baseurl + "/" + a["href"]
+      url = re.sub('&sid=[0-9a-f]+','', url)
+
       feed.add(title=a.string,
-               url=baseurl + "/" + a["href"],
+               url=url,
                published=published,
                updated=updated,
                author=author,
