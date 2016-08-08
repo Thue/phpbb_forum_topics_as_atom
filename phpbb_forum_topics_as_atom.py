@@ -1,6 +1,6 @@
 import urllib2
 from pyatom import AtomFeed
-import dateutil
+import dateutil.parser
 import re
 import mod_python
 import BeautifulSoup
